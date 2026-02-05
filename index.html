@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Pravin Savata Gade | Academic Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f0f2f5;
+  --card: #ffffff;
+  --accent: #1f4fff;
+  --text-main: #1a1a1a;
+  --text-muted: #636e72;
+  --shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.8;
+}
+
+/* Header & Banner */
+.hero {
+  width: 100%;
+  height: 380px;
+  background: #000;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+/* Main Profile Card */
+.wrapper {
+  max-width: 1000px;
+  margin: -140px auto 60px;
+  padding: 0 20px;
+}
+
+.profile-card {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 50px;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-header img {
+  width: 180px;
+  height: 180px;
+  border-radius: 15px;
+  margin-top: -140px;
+  border: 8px solid var(--card);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  object-fit: cover;
+  background: #fff;
+}
+
+.profile-header h1 {
+  margin: 25px 0 8px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.tagline {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.sub-tagline {
+  color: var(--text-muted);
+  font-size: 13px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Horizontal Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  border-bottom: 2px solid #f0f0f0;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 15px 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab-btn:hover { color: var(--accent); }
+
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Content Sections */
+.tab-content {
+  display: none;
+  animation: slideUp 0.5s ease;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.tab-content.active { display: block; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 { 
+  font-size: 22px; 
+  color: var(--text-main); 
+  margin-bottom: 25px;
+  border-left: 4px solid var(--accent);
+  padding-left: 15px;
+}
+
+.content-body { font-size: 15px; color: #333; }
+.content-body p { margin-bottom: 20px; text-align: justify; }
+
+/* Publication & List Styling */
+.pub-item {
+  background: #fcfcfc;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.pub-item em { color: var(--accent); }
+
+.list-style {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-style li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.list-style li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.contact-box {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 50px;
+  font-size: 13px;
+  color: #999;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <img src="quote_banner.jpg" alt="Research Philosophy Image">
+</div>
+
+<div class="wrapper">
+  <div class="profile-card">
+    
+    <div class="profile-header">
+      <img src="my_photo.jpg" alt="Dr. Pravin Gade">
+      <h1>Dr. Pravin Savata Gade</h1>
+      <p class="tagline">Assistant Professor | Researcher | Mentor</p>
+      <p class="sub-tagline"><em>Bioanalytical Chemistry | Nanobiosensor | Food Safety | Biomass Valorisation</em></p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'philosophy')">PHILOSOPHY</button>
+      <button class="tab-btn" onclick="openTab(event, 'interests')">RESEARCH AREAS</button>
+      <button class="tab-btn" onclick="openTab(event, 'publications')">PUBLICATIONS</button>
+      <button class="tab-btn" onclick="openTab(event, 'teaching')">TEACHING</button>
+      <button class="tab-btn" onclick="openTab(event, 'contact')">CONTACT</button>
+    </div>
+
+    <div id="philosophy" class="tab-content active">
+      <h2>Research Philosophy</h2>
+      <div class="content-body">
+        <p>I believe curiosity is the true origin of research. Before data, before instruments, before methods, there is a question. When human survival moved beyond constant struggle, the mind gained the freedom to wonder. That moment gave birth to philosophy—the first “P” in PhD—and it remains the foundation of every meaningful research journey.</p>
+        <p>For me, research does not begin in the laboratory; it begins in thought. Curiosity drives us to question what is known, challenge assumptions, and explore possibilities that data alone cannot reveal. Discovery is not an accident—it is the natural outcome of sustained questioning.</p>
+        <p>I have learned that limitations do not suppress curiosity; they refine it. When resources are scarce, imagination, discipline, and clarity become the most powerful tools. Such conditions force researchers to think deeply, design carefully, and focus on what truly matters rather than what is convenient.</p>
+        <p>I view research not as ownership of knowledge, but as stewardship. Every idea is built on someone else’s effort, patience, and mentorship. Publications and titles may fade, but the curiosity we nurture in others continues forward. As an educator, I see my role as passing on this way of thinking—encouraging students to ask better questions, embrace uncertainty, and remain intellectually honest.</p>
+        <p>Curiosity does not end with a degree. It evolves, deepens, and multiplies when it is shared. That, to me, is the true purpose of research.</p>
+      </div>
+    </div>
+
+    <div id="interests" class="tab-content">
+      <h2>Research Interests</h2>
+      <div class="content-body">
+        <ul class="list-style">
+          <li>Bioanalytical chemistry for detection of food contaminants, toxins, and chemical hazards</li>
+          <li>Aptamer- and antibody-based biorecognition systems</li>
+          <li>Functional nanomaterials and nanozymes for sensing applications</li>
+          <li>Biomass valorization and conversion of lignocellulosic waste into value-added bio-based materials</li>
+          <li>Gut health and functional foods, including prebiotic oligosaccharides and microbiome interactions</li>
+          <li>Computational and predictive modeling, including QSAR and response surface methodologies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="publications" class="tab-content">
+      <h2>Publications, Patents & Translational Work</h2>
+      <div class="content-body">
+        <div class="pub-item">
+          <strong>Pravin Savata Gade</strong>, Rutuja Murlidhar Sonkar and Praveena Bhatt. “Xylooligosaccharide in combination with Lactobacillus rhamnosus ameliorates disturbed circadian rhythm and associated neurological internal desynchronization by maintaining homeostasis of neuroactive molecules and Gut microbiome.” Accepted in <em>Archives of Microbiology</em>, Feb 2026
+        </div>
+
+        <div class="pub-item">
+          <strong>Pravin Savata Gade</strong>, Rutuja Murlidhar Sonkar, Sandeep N. Mudliar, and Praveena Bhatt. "Comparative evaluation of biological, physical, and chemical approaches for the mitigation of sterigmatocystin: Mycotoxin of growing concern." <em>Food Chemistry</em> (2025): 143259. (DOI: 10.1016/j.foodchem.2025.143259)
+        </div>
+
+        <div class="pub-item">
+          <strong>Pravin Savata Gade</strong>, Rutuja Murlidhar Sonkar, Dipita Roy, and Praveena Bhatt. “Peroxidase-mimetic colloidal nanozyme from ozone-oxidized lignocellulosic biomass for biosensing of H2O2 and bacterial contamination in water.” <em>Applied Nanoscience</em> 14, no. 3 (2024): 491-505. (DOI: 10.1007/s13204-024-02995-7)
+        </div>
+
+        <div class="pub-item">
+          <strong>Pravin Savata Gade</strong>, Rutuja Murlidhar Sonkar, and Praveena Bhatt. "Graphene oxide-mediated fluorescence turn-on GO-FAM-FRET aptasensor for detection of sterigmatocystin.” <em>Analytical Methods</em> 14.39 (2022): 3890-3897. (DOI:10.1039/D2AY01405J)
+        </div>
+
+        <div class="pub-item">
+          Rajendra Kumar Reddy Gajjala, Reddy, <strong>Pravin Savata Gade</strong>, Praveena Bhatt, Neelam Vishwakarma, and Suman Singh. "Enzyme decorated dendritic bimetallic nanocomposite biosensor for detection of HCHO." <em>Talanta</em> 238 (2022): 123054. (DOI:10.1016/j.talanta.2021.123054)
+        </div>
+
+        <div class="pub-item">
+          Sonkar, Rutuja Murlidhar, <strong>Pravin Savata Gade</strong>, Sandeep N. Mudliar, and Praveena Bhatt. "Green Downstream Processing Method for Xylooligosaccharide Purification and Assessment of Its Prebiotic Properties." <em>ACS omega</em> 8, no. 45 (2023): 42815-42826. (DOI: 10.1021/acsomega.3c05714)
+        </div>
+
+        <div class="pub-item">
+          Rutuja Murlidhar Sonkar, <strong>Pravin Savata Gade</strong>, Vijay Bokade, Sandeep N. Mudliar, and Praveena Bhatt. "Ozone assisted autohydrolysis of wheat bran enhances xylooligosaccharide production with low generation of inhibitor compounds: A comparative study." <em>Bioresource Technology</em> 338 (2021): 125559. (DOI:10.1016/j.biortech.2021.125559)
+        </div>
+
+        <p><strong>PATENTS & TRANSLATIONAL WORK</strong></p>
+        <ul class="list-style">
+          <li>Colorimetric reagent kit for detection of formaldehyde (Filed)</li>
+          <li>Aptamer for detection of SARS-CoV-2 virus (Filed)</li>
+        </ul>
+        <p><em>My work emphasizes translation of analytical concepts into low-cost, point-of-care, and field-deployable platforms with potential industrial and societal impact.</em></p>
+      </div>
+    </div>
+
+    <div id="teaching" class="tab-content">
+      <h2>Teaching & Academic Service</h2>
+      <div class="content-body">
+        <ul class="list-style">
+          <li>Teaching undergraduate and postgraduate courses in Biotechnology, Biomedical Sciences, and Bioengineering</li>
+          <li>Board of Studies (BOS) Coordinator</li>
+          <li>NAAC Criteria Coordinator</li>
+          <li>Student mentoring, laboratory development, and curriculum design</li>
+          <li>Reviewer for peer-reviewed scientific journals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <div class="content-body">
+        <div class="contact-box">
+          <p><strong>Dr. Pravin Savata Gade</strong><br>
+          Assistant Professor<br>
+          School of Biosciences and Bioengineering<br>
+          D. Y. Patil International University, Akurdi, Pune, India</p>
+          
+          <p>
+            📧 <strong>Email:</strong> <a href="mailto:parveenf21@gmail.com">parveenf21@gmail.com</a><br><br>
+            🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/PravinGade" target="_blank">linkedin.com/in/PravinGade</a><br><br>
+            🔬 <strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Pravin-Gade-2" target="_blank">ResearchGate Profile</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Dr. Pravin Savata Gade | Academic Portfolio
+</footer>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    tabcontent[i].classList.remove("active");
+  }
+  tablinks = document.getElementsByClassName("tab-btn");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  setTimeout(() => {
+    document.getElementById(tabName).classList.add("active");
+  }, 10);
+  evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+</html>
